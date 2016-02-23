@@ -1,0 +1,8 @@
+#!/bin/zsh
+BRANCH=$(git branch | awk '{print $2}')
+git co master
+git fap
+git rebase $1/master
+git co $BRANCH
+git rebase master
+echo $BRANCH
